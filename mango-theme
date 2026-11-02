@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source lib/common.sh
+case "${1:-}" in
+  list) ls themes;;
+  current) cat ~/.config/mango-theme 2>/dev/null || echo none;;
+  set) echo "$2" > ~/.config/mango-theme; info "set $2";;
+  random) t=$(ls themes | shuf -n1); echo "$t" > ~/.config/mango-theme; info "random: $t";;
+  *) echo "usage: mango-theme {list|current|set <name>|random}";;
+esac
