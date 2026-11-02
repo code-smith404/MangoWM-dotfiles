@@ -1,0 +1,7 @@
+* {
+    bg: {{bg}};
+    fg: {{fg}};
+    accent: {{accent}};
+    red: {{red}};
+}
+window { background-color: @bg; }

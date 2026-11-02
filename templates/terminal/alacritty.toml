@@ -1,0 +1,17 @@
+[colors.primary]
+background = "{{bg}}"
+foreground = "{{fg}}"
+
+[colors.normal]
+black = "{{bg_dark}}"
+red = "{{red}}"
+green = "{{green}}"
+yellow = "{{yellow}}"
+blue = "{{blue}}"
+magenta = "{{magenta}}"
+cyan = "{{cyan}}"
+white = "{{fg}}"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 11.0

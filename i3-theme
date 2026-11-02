@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source lib/common.sh
+case "${1:-}" in
+  list) ls themes 2>/dev/null || ls ~/.config/i3-dotfiles/themes 2>/dev/null;;
+  current) cat ~/.config/i3-dotfiles/current-theme 2>/dev/null || echo none;;
+  set) echo "$2" > ~/.config/i3-dotfiles/current-theme; info "set $2 (re-render manually)";;
+  random) t=$(ls themes | shuf -n1); echo "$t" > ~/.config/i3-dotfiles/current-theme; info "random: $t";;
+  *) echo "usage: i3-theme {list|current|set <name>|random}";;
+esac
