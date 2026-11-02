@@ -1,0 +1,2 @@
+* { font-family: "JetBrainsMono Nerd Font"; color: {{fg}}; background: {{bg}}; }
+#workspaces button.focused { color: {{bg}}; background: {{accent}}; }
