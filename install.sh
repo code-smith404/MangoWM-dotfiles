@@ -5,7 +5,7 @@ REPO_URL="https://github.com/code-smith404/MangoWM-dotfiles.git"
 BRANCH="main"
 
 # Bootstrap when run via curl (no local checkout)
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || true)"
+SCRIPT_DIR="."
 if [[ ! -f "${SCRIPT_DIR}/lib/common.sh" ]]; then
   TMPCLONE=$(mktemp -d)
   trap 'rm -rf "$TMPCLONE"' EXIT
@@ -14,7 +14,6 @@ if [[ ! -f "${SCRIPT_DIR}/lib/common.sh" ]]; then
   exit $?
 fi
 
-cd "$SCRIPT_DIR"
 source lib/common.sh
 THEME=""
 DRY=0
