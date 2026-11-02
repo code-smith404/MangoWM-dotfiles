@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# online bootstrap: if run without a clone, shallow-clone
-if [[ ! -f "lib/common.sh" ]]; then
+
+REPO_URL="https://github.com/code-smith404/MangoWM-dotfiles.git"
+BRANCH="main"
+
+# Bootstrap when run via curl (no local checkout)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd || true)"
+if [[ ! -f "${SCRIPT_DIR}/lib/common.sh" ]]; then
   TMPCLONE=$(mktemp -d)
   trap 'rm -rf "$TMPCLONE"' EXIT
-  git clone --depth 1 https://github.com/code-smith404/MangoWM-dotfiles.git "$TMPCLONE/repo"
-  cd "$TMPCLONE/repo"
+  git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$TMPCLONE/repo" >/dev/null 2>&1
+  "$TMPCLONE/repo/install.sh" "$@"
+  exit $?
 fi
+
+cd "$SCRIPT_DIR"
 source lib/common.sh
 THEME=""
 DRY=0
