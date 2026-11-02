@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# online bootstrap: if run without a clone, shallow-clone
+if [[ ! -f "lib/common.sh" ]]; then
+  TMPCLONE=$(mktemp -d)
+  trap 'rm -rf "$TMPCLONE"' EXIT
+  git clone --depth 1 https://github.com/code-smith404/MangoWM-dotfiles.git "$TMPCLONE/repo"
+  cd "$TMPCLONE/repo"
+fi
 source lib/common.sh
 THEME=""
 DRY=0
