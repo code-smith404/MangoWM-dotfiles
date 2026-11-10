@@ -9,6 +9,14 @@ Themes and setup files for [MangoBar](https://github.com/mangowm/mangobar), the 
 
 ## Install
 
+**Online (no manual clone needed):**
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/code-smith404/MangoWM-dotfiles/main/install.sh)"
+```
+
+**Or clone first:**
+
 ```bash
 git clone https://github.com/code-smith404/MangoWM-dotfiles.git
 cd MangoWM-dotfiles
