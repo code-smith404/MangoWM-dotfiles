@@ -1,0 +1,156 @@
+/* Forest — dark woodland panel with soft green capsules and rounded corners. */
+
+@define-color bar #161b18;
+@define-color capsule #253029;
+@define-color capsule-hover #3a4a3e;
+@define-color text #e8f3e9;
+@define-color secondary #9fd0a3;
+@define-color muted #6e8474;
+@define-color outline #425947;
+@define-color accent #4ade80;
+@define-color accent-dim #2f8550;
+@define-color danger #fb7185;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
+    color: @text;
+    background-color: none;
+    padding: 3px 8px;
+    margin: 4px 1px;
+    border-radius: 10px;
+}
+
+#bar {
+    background-color: @bar;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+#tags {
+    background-color: @capsule;
+    color: @muted;
+    min-width: 22px;
+    padding: 2px 4px;
+    border: 1px solid @outline;
+    border-radius: 999px;
+}
+
+#tags.active {
+    background-color: @accent-dim;
+    color: @bar;
+    font-weight: 600;
+    border-color: @accent;
+}
+
+#tags.occupied {
+    background-color: @capsule;
+    color: @secondary;
+    border-color: @outline;
+}
+
+#tags.urgent {
+    background-color: @danger;
+    color: @bar;
+    font-weight: 600;
+}
+
+#tags.empty {
+    color: @muted;
+}
+
+#tags:hover {
+    background-color: @capsule-hover;
+    color: @text;
+}
+
+#clock.datetime {
+    background-color: @accent-dim;
+    color: @bar;
+    font-weight: 600;
+    padding: 3px 10px;
+}
+
+#clock.datetime:hover {
+    background-color: @accent;
+    color: @bar;
+}
+
+#network,
+#custom-notifications,
+#cpu,
+#memory,
+#volume,
+#custom-power {
+    background-color: @capsule;
+    color: @secondary;
+    border: 1px solid @outline;
+}
+
+#network {
+    padding-left: 6px;
+    padding-right: 8px;
+}
+
+#network.wifi {
+    color: @accent;
+}
+
+#network.ethernet {
+    color: @secondary;
+}
+
+#network.disconnected {
+    color: @danger;
+}
+
+#custom-notifications {
+    color: @secondary;
+}
+
+#cpu {
+    color: @secondary;
+}
+
+#memory {
+    color: @secondary;
+}
+
+#volume {
+    color: @text;
+}
+
+#network:hover,
+#custom-notifications:hover,
+#cpu:hover,
+#memory:hover,
+#volume:hover,
+#custom-power:hover {
+    background-color: @capsule-hover;
+    color: @text;
+}
+
+#custom-power {
+    color: @danger;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+menu {
+    background-color: @capsule;
+    color: @text;
+    border-radius: 10px;
+}
+
+menuitem {
+    background-color: none;
+    color: @text;
+    padding: 5px 9px;
+    border-radius: 7px;
+}
+
+menuitem:hover {
+    background-color: @capsule-hover;
+    color: @text;
+}

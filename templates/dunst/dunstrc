@@ -1,6 +1,0 @@
-[global]
-    font = JetBrainsMono Nerd Font 10
-    background = "{{bg}}"
-    foreground = "{{fg}}"
-    frame_color = "{{accent}}"
-    corner_radius = 8

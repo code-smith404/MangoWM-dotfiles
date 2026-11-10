@@ -1,0 +1,72 @@
+// Forest — a rounded-capsule bar with green accents and a centered date/time pill.
+{
+    "layer": "top",
+    "height": 36,
+    "buffer-scale": 1,
+    "sys-interval": 2,
+    "scroll-interval": 100,
+    "font": "JetBrainsMono Nerd Font",
+
+    "modules-left": [
+        "workspaces"
+    ],
+    "modules-center": [
+        "clock#datetime"
+    ],
+    "modules-right": [
+        "network",
+        "custom/notifications",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "custom/power"
+    ],
+
+    "workspaces": {
+        "hide-empty": false,
+        "pinned": [1, 2, 3, 4, 5, 6, 7, 8],
+        "on-click": "activate",
+        "on-click-right": "toggle",
+        "on-scroll-up": "mmsg dispatch viewtoleft_have_client",
+        "on-scroll-down": "mmsg dispatch viewtoright_have_client"
+    },
+    "clock#datetime": {
+        "format": " {:L%a %d %b}   {:L%H:%M}",
+        "on-click": "$HOME/.config/mangobar/scripts/controls.sh calendar"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "{signal}",
+        "format-ethernet": "{icon}",
+        "format-disconnected": "{icon}",
+        "icon-wifi": "󰖩",
+        "icon-ethernet": "󰈀",
+        "icon-disconnected": "󰖪",
+        "signal-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "on-click": "$HOME/.config/mangobar/scripts/controls.sh network"
+    },
+    "custom/notifications": {
+        "format": "󰂚",
+        "on-click": "$HOME/.config/mangobar/scripts/controls.sh notifications"
+    },
+    "cpu": {
+        "format": " {load}%",
+        "on-click": "$HOME/.config/mangobar/scripts/controls.sh system-monitor"
+    },
+    "memory": {
+        "format": "󰍛 {}%",
+        "on-click": "$HOME/.config/mangobar/scripts/controls.sh system-monitor"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "icons": ["󰝟", "󰕿", "󰕾"],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "$HOME/.config/mangobar/scripts/power-menu.sh"
+    }
+}

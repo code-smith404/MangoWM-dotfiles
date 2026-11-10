@@ -1,0 +1,86 @@
+// Midnight Lake — MangoBar V2.0
+{
+    "layer": "top",
+    "height": 40,
+    "buffer-scale": 1,
+    "sys-interval": 2,
+
+    "modules-left": [
+        "workspaces"
+    ],
+    "modules-center": [
+        "window"
+    ],
+    "modules-right": [
+        "cpu",
+        "custom/divider-cpu-memory",
+        "memory",
+        "custom/divider-memory-network",
+        "network",
+        "custom/divider-network-volume",
+        "pulseaudio",
+        "custom/divider-volume-date",
+        "clock#date",
+        "custom/divider-date-time",
+        "clock#time"
+    ],
+
+    "workspaces": {
+        "hide-empty": true,
+        "pinned": [1, 2, 3, 4],
+        "tag-names": ["1", "2", "3", "4"],
+        "on-click": "activate"
+    },
+    "window": {
+        "format": "{}",
+        "max-length": 480
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "memory": {
+        "format": "󰘚 {}%"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "{signal}",
+        "format-ethernet": "{icon}",
+        "format-disconnected": "{icon}",
+        "icon-wifi": "󰖩",
+        "icon-ethernet": "󰈀",
+        "icon-disconnected": "󰖪",
+        "signal-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "icons": ["󰝟", "󰕿", "󰕾"]
+    },
+    "clock#date": {
+        "format": " {:L%a %d %b}"
+    },
+    "clock#time": {
+        "format": " {:L%H:%M}"
+    },
+
+    "custom/divider-cpu-memory": {
+        "exec": "printf '│'",
+        "format": "{}"
+    },
+    "custom/divider-memory-network": {
+        "exec": "printf '│'",
+        "format": "{}"
+    },
+    "custom/divider-network-volume": {
+        "exec": "printf '│'",
+        "format": "{}"
+    },
+    "custom/divider-volume-date": {
+        "exec": "printf '│'",
+        "format": "{}"
+    },
+    "custom/divider-date-time": {
+        "exec": "printf '│'",
+        "format": "{}"
+    }
+}

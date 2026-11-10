@@ -1,5 +1,0 @@
-# mako
-background-color={{bg}}
-text-color={{fg}}
-border-color={{accent}}
-border-radius=8

@@ -1,6 +1,0 @@
-*background: {{bg}}
-*foreground: {{fg}}
-*color0: {{bg_dark}}
-*color1: {{red}}
-*color4: {{blue}}
-*color12: {{accent}}

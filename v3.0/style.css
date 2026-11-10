@@ -1,0 +1,133 @@
+/* Mist Lake — soft warm panel with a mist-dark palette and blue status pills. */
+
+@define-color bar #C9C1B5;
+@define-color capsule #171B2B;
+@define-color text #E8EDF7;
+@define-color secondary #BBC5D8;
+@define-color muted #8792AA;
+@define-color outline #51617D;
+@define-color occupied #587BC3;
+@define-color accent #83AEFF;
+@define-color hover #2B344A;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 500;
+    color: @text;
+    background-color: none;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 999px;
+}
+
+#bar {
+    background-color: @bar;
+    margin: 0px;
+    border-radius: 0px;
+}
+
+#tags {
+    background-color: @capsule;
+    color: @muted;
+    min-width: 12px;
+    padding: 2px 3px;
+    margin: 3px 1px;
+    border: 1px solid @outline;
+    border-radius: 999px;
+}
+
+#tags.active {
+    background-color: @accent;
+    color: @capsule;
+    min-width: 22px;
+    border-color: @accent;
+    font-weight: 600;
+}
+
+#tags.occupied {
+    background-color: @occupied;
+    color: @text;
+    border-color: @occupied;
+}
+
+#tags.urgent {
+    background-color: @accent;
+    color: @text;
+    font-weight: 600;
+}
+
+#tags.empty {
+    color: @muted;
+}
+
+#tags:hover {
+    background-color: @hover;
+    color: @text;
+}
+
+#custom-center-mark {
+    background-color: @capsule;
+    color: @text;
+    min-width: 22px;
+    padding: 2px 0px;
+    margin: 4px 0px;
+}
+
+#network,
+#volume,
+#clock {
+    background-color: @capsule;
+    color: @secondary;
+    padding: 3px 7px;
+    margin: 4px 1px;
+}
+
+#network {
+    padding-left: 5px;
+    padding-right: 7px;
+}
+
+#network.connected,
+#network.wifi {
+    color: @text;
+}
+
+#network.ethernet {
+    color: @text;
+}
+
+#network.disconnected {
+    color: @secondary;
+}
+
+#clock.datetime {
+    background-color: @accent;
+    color: @text;
+    font-weight: 600;
+}
+
+#network:hover,
+#volume:hover,
+#clock:hover {
+    background-color: @hover;
+    color: @text;
+}
+
+menu {
+    background-color: @capsule;
+    color: @text;
+    border-radius: 10px;
+}
+
+menuitem {
+    background-color: none;
+    color: @text;
+    padding: 5px 9px;
+    border-radius: 7px;
+}
+
+menuitem:hover {
+    background-color: @hover;
+    color: @text;
+}

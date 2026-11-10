@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#121b16"/><stop offset="1" stop-color="#1e2b22"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2d3d32"/><stop offset="1" stop-color="#1c2820"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#4ade80" stop-opacity=".12"/><stop offset="1" stop-color="#4ade80" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur in="SourceAlpha" stdDeviation="10"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".35"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="440" rx="24" fill="url(#bg)"/>
+  <circle cx="1040" cy="90" r="190" fill="url(#glow)"/>
+  <circle cx="150" cy="360" r="160" fill="#22c55e" opacity=".06"/>
+  <text x="64" y="78" fill="#e8f3e9" font-family="sans-serif" font-size="26" font-weight="700">MangoBar · V5.0</text>
+  <text x="66" y="104" fill="#9fd0a3" font-family="sans-serif" font-size="13" letter-spacing="1.4">FOREST · ROUNDED CAPSULES · GREEN ACCENTS</text>
+  <g filter="url(#shadow)" font-family="monospace" font-size="13">
+    <rect x="54" y="148" width="1092" height="56" rx="15" fill="url(#bar)" stroke="#425947" stroke-opacity=".7"/>
+    <rect x="70" y="160" width="168" height="32" rx="11" fill="#253029" stroke="#425947"/>
+    <text x="83" y="184" fill="#6e8474">1</text><text x="118" y="184" fill="#6e8474">2</text><text x="154" y="184" fill="#6e8474">3</text><text x="190" y="184" fill="#6e8474">4</text><text x="226" y="184" fill="#6e8474">5</text><text x="262" y="184" fill="#6e8474">6</text><text x="298" y="184" fill="#6e8474">7</text><text x="334" y="184" fill="#6e8474">8</text>
+    <rect x="410" y="160" width="190" height="32" rx="11" fill="#1c2820"/><text x="424" y="184" fill="#e8f3e9">Focused window</text>
+    <rect x="760" y="160" width="200" height="32" rx="11" fill="#2f8550"/><text x="860" y="184" text-anchor="middle" fill="#161b18">Fri 20 Oct  06:50</text>
+    <rect x="970" y="160" width="72" height="32" rx="11" fill="#253029" stroke="#425947"/><text x="986" y="184" text-anchor="middle" fill="#4ade80">󰖩</text>
+    <rect x="1052" y="160" width="72" height="32" rx="11" fill="#253029" stroke="#425947"/><text x="1068" y="184" text-anchor="middle" fill="#9fd0a3">󰂚</text>
+    <rect x="1134" y="160" width="12" height="32" rx="6" fill="#2f8550"/>
+    <rect x="1142" y="160" width="12" height="32" rx="6" fill="#2f8550"/>
+    <rect x="1150" y="160" width="96" height="32" rx="11" fill="#253029" stroke="#425947"/><text x="1198" y="184" text-anchor="middle" fill="#fb7185">⏻</text>
+  </g>
+  <rect x="64" y="262" width="1072" height="1" fill="#4ade80" opacity=".12"/>
+  <text x="64" y="302" fill="#e8f3e9" font-family="sans-serif" font-size="17" font-weight="600">Quiet woodland tones, soft green capsules.</text>
+  <text x="64" y="330" fill="#9fd0a3" font-family="sans-serif" font-size="13">Centered date/time pill; each module sits in a rounded capsule that lights up on hover.</text>
+  <text x="64" y="398" fill="#6e8474" font-family="sans-serif" font-size="11" letter-spacing="1.5">STATIC THEME PREVIEW · ACTUAL APPEARANCE MAY VARY BY FONT AND MANGOBAR BUILD</text>
+</svg>

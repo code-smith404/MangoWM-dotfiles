@@ -1,0 +1,145 @@
+/* Midnight Lake — midnight glass with lavender and teal accents. */
+@define-color base #0A1020;
+@define-color panel #D90D1428;
+@define-color panel-edge #E6162038;
+@define-color surface #72202C49;
+@define-color text #F3F5FF;
+@define-color muted #C2C8DA;
+@define-color quiet #8993AD;
+@define-color lavender #C3A6FF;
+@define-color lavender-deep #9E80E8;
+@define-color teal #82D8D0;
+@define-color red #F28D9A;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
+    color: @text;
+    background-color: none;
+    padding: 3px 7px;
+    margin: 2px 3px;
+    border-radius: 10px;
+}
+
+/* MangoBar supports translucent colors and gradients, but not backdrop blur. */
+#bar {
+    background: linear-gradient(to bottom, @panel-edge, @panel);
+    margin: 5px 10px;
+    border-radius: 15px;
+}
+
+#tags {
+    background: @surface;
+    color: @muted;
+    padding: 3px 10px;
+    margin: 2px;
+    border-radius: 9px;
+}
+
+#tags.active {
+    background: linear-gradient(to bottom, @lavender, @lavender-deep);
+    color: @base;
+}
+
+#tags.occupied {
+    background: @surface;
+    color: @muted;
+}
+
+#tags.empty {
+    background: @surface;
+    color: @quiet;
+}
+
+#tags:hover {
+    background: #A3324162;
+    color: @text;
+}
+
+#title {
+    background: none;
+    color: @text;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+#cpu {
+    background: none;
+    color: @lavender;
+}
+
+#mem {
+    background: none;
+    color: @teal;
+}
+
+#network {
+    background: none;
+    color: @teal;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#network.ethernet {
+    color: @muted;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#volume {
+    background: none;
+    color: @lavender;
+}
+
+#clock {
+    background: none;
+    color: @muted;
+}
+
+#clock.date {
+    color: @muted;
+}
+
+#clock.time {
+    color: @teal;
+}
+
+#custom-divider-cpu-memory {
+    background: none;
+    color: #667E8CA8;
+    padding: 0px;
+    margin: 0px 2px;
+}
+
+#custom-divider-memory-network {
+    background: none;
+    color: #667E8CA8;
+    padding: 0px;
+    margin: 0px 2px;
+}
+
+#custom-divider-network-volume {
+    background: none;
+    color: #667E8CA8;
+    padding: 0px;
+    margin: 0px 2px;
+}
+
+#custom-divider-volume-date {
+    background: none;
+    color: #667E8CA8;
+    padding: 0px;
+    margin: 0px 2px;
+}
+
+#custom-divider-date-time {
+    background: none;
+    color: #667E8CA8;
+    padding: 0px;
+    margin: 0px 2px;
+}
