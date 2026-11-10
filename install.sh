@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-THEME_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_URL="https://github.com/code-smith404/MangoWM-dotfiles.git"
+BRANCH="main"
+
+# Online bootstrap: when run via curl (no local checkout), shallow-clone the
+# repo into a temp dir and run the cloned install.sh as a child process so the
+# trap still removes the temp dir on exit and stdin stays attached to the
+# terminal for interactive prompts.
+THEME_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]:-}")" 2>/dev/null && pwd || true)"
+if [[ ! -f "${THEME_DIR}/v1.0/config.jsonc" ]]; then
+  TMPCLONE=$(mktemp -d)
+  trap 'rm -rf "$TMPCLONE"' EXIT
+  git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$TMPCLONE/repo" >/dev/null 2>&1
+  "$TMPCLONE/repo/install.sh" "$@"
+  exit $?
+fi
+
 CONFIG_DIR="${HOME:?HOME must be set}/.config/mangobar"
 
 printf 'Choose a MangoBar theme to install:\n'
